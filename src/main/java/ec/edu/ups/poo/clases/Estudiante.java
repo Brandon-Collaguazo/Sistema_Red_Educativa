@@ -5,7 +5,7 @@ import java.util.List;
 public class Estudiante extends Persona{
     private String carrera;
     public Estudiante(String cedula, String nombre, String apellido, String celular, String correo, List<Direccion> direccion, String carrera) {
-        super(cedula, nombre, apellido, celular, correo, direccion);
+        super(cedula, nombre, apellido, celular, correo);
         this.carrera = carrera;
     }
     public Estudiante() {

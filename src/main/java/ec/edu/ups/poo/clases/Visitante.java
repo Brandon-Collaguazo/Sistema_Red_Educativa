@@ -8,7 +8,7 @@ public class Visitante extends Persona {
     private GregorianCalendar fEntrada;
     private GregorianCalendar fSalida;
     public Visitante(String cedula, String nombre, String apellido, String celular, String correo, List<Direccion> direccion, String motivo, GregorianCalendar fEntrada, GregorianCalendar fSalida) {
-        super(cedula, nombre, apellido, celular, correo, direccion);
+        super(cedula, nombre, apellido, celular, correo);
         this.motivo = motivo;
         this.fEntrada = fEntrada;
         this.fSalida = fSalida;

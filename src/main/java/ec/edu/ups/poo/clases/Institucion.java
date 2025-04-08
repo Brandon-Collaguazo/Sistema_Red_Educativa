@@ -1,22 +1,30 @@
 package ec.edu.ups.poo.clases;
 
-public class Institucion {
-    private String id;
-    private String nombre;
-    private String ubicacion;
+import java.util.ArrayList;
+import java.util.List;
 
-    public Institucion(String id, String nombre, String ubicacion) {
+public class Institucion {
+    private int id;
+    private String nombre;
+    private List<String> sedes;
+    private Direccion direccion;
+    private List<Asignacion> asignaciones;
+
+    public Institucion() {
+        this.sedes = new ArrayList<>();
+        this.asignaciones = new ArrayList<>();
+    }
+    public Institucion(int id, String nombre, List<String> sedes, Direccion direccion, List<Asignacion> asignaciones) {
         this.id = id;
         this.nombre = nombre;
-        this.ubicacion = ubicacion;
+        this.sedes = new ArrayList<>();
+        this.direccion = direccion;
+        this.asignaciones = new ArrayList<>();
     }
-    public Institucion() {
-
-    }
-    public String getId() {
+    public int getId() {
         return id;
     }
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
     public String getNombre() {
@@ -25,19 +33,34 @@ public class Institucion {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public String getUbicacion() {
-        return ubicacion;
+    public void addSedes(String sede) {
+        sedes.add(sede);
     }
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
+    public List<String> getSedes() {
+        return sedes;
+    }
+    public Direccion getDireccion() {
+        return direccion;
+    }
+    public void setDireccion(Direccion direccion) {
+        this.direccion = direccion;
+    }
+    public  void addAsignacion(Asignacion asignacion) {
+        asignaciones.add(asignacion);
+    }
+
+    public List<Asignacion> getAsignaciones() {
+        return asignaciones;
     }
 
     @Override
     public String toString() {
         return "Institucion{" +
-                "id='" + id + '\'' +
+                "id=" + id +
                 ", nombre='" + nombre + '\'' +
-                ", ubicacion='" + ubicacion + '\'' +
+                ", sedes=" + sedes +
+                ", direccion=" + direccion +
+                ", asignaciones=" + asignaciones +
                 '}';
     }
 }

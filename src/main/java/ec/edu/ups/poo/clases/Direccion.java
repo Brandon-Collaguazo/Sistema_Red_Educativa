@@ -1,15 +1,17 @@
 package ec.edu.ups.poo.clases;
 
+import ec.edu.ups.poo.enums.TipoDireccion;
+
 public class Direccion {
-    private String tipo;
+    private TipoDireccion tipoDireccion;
     private String cprincipal;
     private String csecundaria;
     private String numeracion;
     private String ciudad;
     private String provincia;
     private String pais;
-    public Direccion(String tipo, String cprincipal, String csecundaria, String numeracion, String ciudad, String provincia, String pais) {
-        this.tipo = tipo;
+    public Direccion(TipoDireccion tipoDireccion, String cprincipal, String csecundaria, String numeracion, String ciudad, String provincia, String pais) {
+        this.tipoDireccion = tipoDireccion;
         this.cprincipal = cprincipal;
         this.csecundaria = csecundaria;
         this.numeracion = numeracion;
@@ -20,12 +22,13 @@ public class Direccion {
     public Direccion() {
 
     }
-    public String getTipo() {
-        return tipo;
+    public TipoDireccion getTipoDireccion() {
+        return tipoDireccion;
     }
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setTipoDireccion(TipoDireccion tipoDireccion) {
+        this.tipoDireccion = tipoDireccion;
     }
+
     public String getCprincipal() {
         return cprincipal;
     }
@@ -66,13 +69,13 @@ public class Direccion {
     @Override
     public String toString() {
         return "Direccion{" +
-                "Tipo: '" + tipo + '\'' +
-                ", Calle principal: '" + cprincipal + '\'' +
-                ", Calle secundaria: '" + csecundaria + '\'' +
-                ", Numeración: '" + numeracion + '\'' +
-                ", Ciudad: '" + ciudad + '\'' +
-                ", Provincia: '" + provincia + '\'' +
-                ", País: '" + pais + '\'' +
+                "tipoDireccion=" + tipoDireccion +
+                ", cprincipal='" + cprincipal + '\'' +
+                ", csecundaria='" + csecundaria + '\'' +
+                ", numeracion='" + numeracion + '\'' +
+                ", ciudad='" + ciudad + '\'' +
+                ", provincia='" + provincia + '\'' +
+                ", pais='" + pais + '\'' +
                 '}';
     }
 }

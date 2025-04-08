@@ -1,5 +1,6 @@
 package ec.edu.ups.poo.clases;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Persona {
@@ -8,17 +9,18 @@ public class Persona {
     private String apellido;
     private String celular;
     private String correo;
-    private List<Direccion> direccion;
+    private List<Direccion> direcciones;
 
-    public Persona(String cedula, String nombre, String apellido, String celular, String correo, List<Direccion> direccion) {
+    public Persona(String cedula, String nombre, String apellido, String celular, String correo) {
         this.cedula = cedula;
         this.nombre = nombre;
         this.apellido = apellido;
         this.celular = celular;
         this.correo = correo;
-        this.direccion = direccion;
+        this.direcciones = new ArrayList<>();
     }
     public Persona() {
+        this.direcciones = new ArrayList<>();
     }
     public String getCedula() {
         return cedula;
@@ -50,21 +52,22 @@ public class Persona {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
-    public List<Direccion> getDireccion() {
-        return direccion;
+    public void addDireccion(Direccion direccion) {
+        direcciones.add(direccion);
     }
-    public void setDireccion(List<Direccion> direccion) {
-        this.direccion = direccion;
+    public List<Direccion> getDireccion() {
+        return direcciones;
     }
 
     @Override
     public String toString() {
-        return "Cédula: " + getCedula() +
-                ", Nombre: " + getNombre() +
-                ", Apellido: " + getApellido() +
-                ", Número de celular: " + getCelular() +
-                ", Correo electrónico: " + getCorreo() +
-                ", Direccion: " + getDireccion();
+        return "Persona{" +
+                "cedula='" + cedula + '\'' +
+                ", nombre='" + nombre + '\'' +
+                ", apellido='" + apellido + '\'' +
+                ", celular='" + celular + '\'' +
+                ", correo='" + correo + '\'' +
+                ", direcciones=" + direcciones +
+                '}';
     }
 }

@@ -6,7 +6,7 @@ public class Administrativo extends Persona {
     private List<String> cargos;
     private List<String> responsabilidades;
     public Administrativo(String cedula, String nombre, String apellido, String celular, String correo, List<Direccion> direccion, List<String> cargos, List<String> responsabilidades) {
-        super(cedula, nombre, apellido, celular, correo, direccion);
+        super(cedula, nombre, apellido, celular, correo);
         this.cargos = cargos;
         this.responsabilidades = responsabilidades;
     }
